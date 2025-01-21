@@ -1,5 +1,3 @@
-package ru.my;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,33 +5,32 @@ public class Main {
 
     public static void main(String[] args) {
         int magicNumber = Math.abs(new Random().nextInt())%10;
-        System.out.println("Загадано число. Отгадайте его.");
+        System.out.println("Р—Р°РіР°РґР°РЅРѕ С‡РёСЃР»Рѕ. РћС‚РіР°РґР°Р№С‚Рµ РµРіРѕ.");
         System.out.println(magicNumber);
         Scanner s = new Scanner(System.in);
         for (int i = 0; i < 3; ++i) {
             try {
-                System.out.println("Вводите число");
+                System.out.println("Р’РІРѕРґРёС‚Рµ С‡РёСЃР»Рѕ");
                 int myInt = s.nextInt();
                 if (myInt > magicNumber)
-                    System.out.println("Ваше число больше");
+                    System.out.println("Р’Р°С€Рµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ");
                 else if (myInt < magicNumber)
-                    System.out.println("Ваше число меньше");
+                    System.out.println("Р’Р°С€Рµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ");
                 else {
-                    System.out.println("Угадали");
+                    System.out.println("РЈРіР°РґР°Р»Рё");
                     break;
                 }
 
-                System.out.println("Еще раз? 1/0");
+                System.out.println("Р•С‰Рµ СЂР°Р·? 1/0");
                 int next = s.nextInt();
                 if (next == 1)
                     continue;
                 break;
             } catch (java.util.InputMismatchException e) {
                 s.next();
-                System.out.println(e);
-                System.out.println("Что-то не то ввели");
+                System.out.println("Р§С‚Рѕ-С‚Рѕ РЅРµ С‚Рѕ РІРІРµР»Рё: " + e);
             } catch (Exception e) {
-                System.out.println("Какая-то жесть творится!");
+                System.out.println("РљР°РєР°СЏ-С‚Рѕ Р¶РµСЃС‚СЊ С‚РІРѕСЂРёС‚СЃСЏ!");
             }
         }
     }
